@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Delete Student</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- nav bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="/">
+          <img
+            src="https://images.seeklogo.com/logo-png/55/1/kyambogo-college-school-logo-png_seeklogo-556240.png"
+            width="40"
+            height="40"
+            class="me-2"
+            alt="logo"
+          />
+          <strong>Kyambogo College School</strong>
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- nav links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/add">Add Student</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container mt-5">
+      <h3>Confirm Delete</h3>
+
+      <p>Are you sure you want to delete <strong>{{student.name}}</strong>?</p>
+
+      <form method="POST">
+        {% csrf_token %}
+        <button class="btn btn-danger">Yes, Delete</button>
+        <a href="/" class="btn btn-secondary">Cancel</a>
+      </form>
+    </div>
+  </body>
+</html>
